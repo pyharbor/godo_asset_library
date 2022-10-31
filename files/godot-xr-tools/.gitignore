@@ -1,0 +1,10 @@
+# Godot files to ignore
+.import/
+
+# Filesystem files to ignore
+logs
+Thumbs.db
+.DS_Store
+
+# Addons sourced externally
+addons/godot-openxr/

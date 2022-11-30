@@ -1,0 +1,23 @@
+[gd_scene load_steps=3 format=3 uid="uid://chg6fcwtp6278"]
+
+[ext_resource type="Script" path="res://Shared/Components/PlayerWeaponComponent.cs" id="1_073hk"]
+[ext_resource type="PackedScene" uid="uid://co2p8r3xu7em1" path="res://Assets/Weapons/Import/test.glb" id="2_k6l6g"]
+
+[node name="Node3D" type="Node3D"]
+top_level = true
+script = ExtResource( "1_073hk" )
+weaponSwayRotationPath = NodePath("WeaponWalkSway/WeaponSwayRotation")
+weaponIdlePath = NodePath("WeaponWalkSway/WeaponSwayRotation/WeaponIdle")
+weaponSwayPath = NodePath("WeaponWalkSway")
+weaponFirePositionPath = NodePath("WeaponWalkSway/WeaponSwayRotation/WeaponIdle/WeaponFirePostion")
+
+[node name="WeaponWalkSway" type="Node3D" parent="."]
+
+[node name="WeaponSwayRotation" type="Node3D" parent="WeaponWalkSway"]
+
+[node name="WeaponIdle" type="Node3D" parent="WeaponWalkSway/WeaponSwayRotation"]
+
+[node name="WeaponFirePostion" type="Node3D" parent="WeaponWalkSway/WeaponSwayRotation/WeaponIdle"]
+
+[node name="test" parent="WeaponWalkSway/WeaponSwayRotation/WeaponIdle/WeaponFirePostion" instance=ExtResource( "2_k6l6g" )]
+transform = Transform3D(-0.998378, 0, -0.0569368, -0.00648295, 0.993497, 0.113677, 0.0565666, 0.113862, -0.991885, 0.104056, -0.154231, -0.0488198)

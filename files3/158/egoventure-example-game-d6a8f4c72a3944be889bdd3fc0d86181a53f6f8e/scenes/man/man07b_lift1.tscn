@@ -1,0 +1,38 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://images/man/man07b_lift1.jpg" type="Texture" id=1]
+[ext_resource path="res://addons/egoventure/nodes/hotspots/hotspot.gd" type="Script" id=2]
+[ext_resource path="res://scenes/man/man07b_lift1.gd" type="Script" id=3]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource( 3 )
+
+[node name="Sprite" type="Sprite" parent="."]
+texture = ExtResource( 1 )
+centered = false
+
+[node name="Hotspot" type="TextureButton" parent="."]
+margin_top = 1103.0
+margin_right = 2597.0
+margin_bottom = 1460.0
+mouse_default_cursor_shape = 6
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+cursor_type = 2
+
+[node name="Hotspot2" type="TextureButton" parent="."]
+margin_left = 616.596
+margin_top = 294.155
+margin_right = 1946.59
+margin_bottom = 1035.16
+mouse_default_cursor_shape = 7
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+cursor_type = 13
+
+[connection signal="activate" from="Hotspot" to="." method="_on_Hotspot_activate"]
+[connection signal="activate" from="Hotspot2" to="." method="_on_Hotspot2_activate"]

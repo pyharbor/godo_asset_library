@@ -1,0 +1,47 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=5
+
+_global_script_classes=[{
+"base": "Area2D",
+"class": &"AreaTrigger",
+"language": &"GDScript",
+"path": "res://assets/area_trigger.gd"
+}, {
+"base": "Camera2D",
+"class": &"CinematicCamera2D",
+"language": &"GDScript",
+"path": "res://addons/cinematic_camera_2d/scripts/cinematic_camera_2d.gd"
+}, {
+"base": "CharacterBody2D",
+"class": &"TestPlayer",
+"language": &"GDScript",
+"path": "res://assets/test_player.gd"
+}, {
+"base": "Node2D",
+"class": &"VirtualCamera2D",
+"language": &"GDScript",
+"path": "res://addons/cinematic_camera_2d/scripts/virtual_camera_2d.gd"
+}]
+_global_script_class_icons={
+"AreaTrigger": "",
+"CinematicCamera2D": "res://addons/cinematic_camera_2d/icons/cinematic_camera_2d.svg",
+"TestPlayer": "",
+"VirtualCamera2D": "res://addons/cinematic_camera_2d/icons/virtual_camera_2d.svg"
+}
+
+[application]
+
+config/name="Cinematic Camera 2D"
+config/features=PackedStringArray("4.0", "Forward Plus")
+config/icon="res://icon.svg"
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/cinematic_camera_2d/plugin.cfg")

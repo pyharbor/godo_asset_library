@@ -1,0 +1,67 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=4
+
+_global_script_classes=[ {
+"base": "Reference",
+"class": "ImmediateSurface",
+"language": "GDScript",
+"path": "res://addons/godot-polyliner/LineGen3D/ImmediateSurface.gd"
+}, {
+"base": "Resource",
+"class": "LineGen3D",
+"language": "GDScript",
+"path": "res://addons/godot-polyliner/LineGen3D/LineGen3D.gd"
+}, {
+"base": "RigidBody",
+"class": "Rope3D",
+"language": "GDScript",
+"path": "res://addons/godot-polyliner/demos/ropetesting/Rope3D.gd"
+} ]
+_global_script_class_icons={
+"ImmediateSurface": "",
+"LineGen3D": "",
+"Rope3D": ""
+}
+
+[application]
+
+config/name="Polyliner"
+run/main_scene="res://addons/godot-polyliner/demos/demo/Spatial.tscn"
+config/icon="res://icon.png"
+
+[audio]
+
+default_bus_layout="res://addons/godot-polyliner/demos/default_bus_layout.tres"
+
+[editor_plugins]
+
+enabled=PoolStringArray( "res://addons/godot-polyliner/plugin.cfg" )
+
+[physics]
+
+common/enable_pause_aware_picking=true
+
+[rendering]
+
+quality/driver/driver_name="GLES2"
+vram_compression/import_etc=true
+vram_compression/import_etc2=false
+quality/shadow_atlas/quadrant_1_subdiv=1
+quality/shadow_atlas/quadrant_2_subdiv=1
+quality/shadow_atlas/quadrant_3_subdiv=1
+quality/shadows/filter_mode=2
+quality/shadows/filter_mode.mobile=2
+quality/reflections/texture_array_reflections=false
+quality/reflections/high_quality_ggx=false
+quality/shading/force_vertex_shading.mobile=false
+quality/shading/force_lambert_over_burley.mobile=false
+quality/shading/force_blinn_over_ggx.mobile=false
+quality/filters/msaa=2
+environment/default_environment="res://addons/godot-polyliner/demos/default_env.tres"

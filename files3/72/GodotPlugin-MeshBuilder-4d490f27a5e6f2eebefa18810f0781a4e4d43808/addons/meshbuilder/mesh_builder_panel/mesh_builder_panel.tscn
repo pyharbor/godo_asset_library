@@ -1,0 +1,557 @@
+[gd_scene load_steps=15 format=3 uid="uid://bjbrvhbu7rmp"]
+
+[ext_resource type="Script" path="res://addons/meshbuilder/mesh_builder_panel/mesh_builder_panel.gd" id="1_xpl4b"]
+[ext_resource type="Texture2D" uid="uid://nj0mgtk308jn" path="res://addons/meshbuilder/mesh_builder_mesh/icon.png" id="2_g0cd1"]
+[ext_resource type="Texture2D" uid="uid://dpvdephx1nls6" path="res://addons/meshbuilder/mesh_builder_cone/icon.png" id="4_ufa4f"]
+[ext_resource type="Texture2D" uid="uid://dwvdu4kb4w7vg" path="res://addons/meshbuilder/mesh_builder_polygon/icon.png" id="4_xprkn"]
+[ext_resource type="Texture2D" uid="uid://d1tx4ml1r44iu" path="res://addons/meshbuilder/mesh_builder_box/icon.png" id="5_sr8gj"]
+[ext_resource type="Texture2D" uid="uid://cbm0nebqixkr7" path="res://addons/meshbuilder/mesh_builder_cylinder/icon.png" id="6_fysmq"]
+[ext_resource type="Texture2D" uid="uid://d1mnl72b14kvt" path="res://addons/meshbuilder/mesh_builder_sphere/icon.png" id="7_ekhoq"]
+[ext_resource type="Texture2D" uid="uid://b1mkwam1qfh51" path="res://addons/meshbuilder/mesh_builder_half_sphere/icon.png" id="8_cj67l"]
+[ext_resource type="Texture2D" uid="uid://ufla1g5upkcx" path="res://addons/meshbuilder/mesh_builder_torus/icon.png" id="9_v0ran"]
+[ext_resource type="Texture2D" uid="uid://c3bixqllkr6d6" path="res://addons/meshbuilder/mesh_builder_icosphere/icon.png" id="10_3peuj"]
+[ext_resource type="Texture2D" uid="uid://qlofuw7k7xrj" path="res://addons/meshbuilder/mesh_builder_panel/search-icon.svg" id="10_gasgh"]
+[ext_resource type="PackedScene" uid="uid://bwo7tt6etdpqi" path="res://addons/meshbuilder/mesh_builder_panel/shape_creation_button.tscn" id="10_gusm6"]
+[ext_resource type="Texture2D" uid="uid://dr0rypu7gs1o5" path="res://addons/meshbuilder/mesh_builder_ring/icon.png" id="11_2i7k1"]
+[ext_resource type="Texture2D" uid="uid://b2cfcxwjdwbi1" path="res://addons/meshbuilder/mesh_builder_buckyball/icon.png" id="12_x1dxt"]
+
+[node name="MeshBuilderPanel" type="Control"]
+custom_minimum_size = Vector2i(0, 270)
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_xpl4b")
+
+[node name="TabContainer" type="TabContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_layout_mode = 1
+
+[node name="Basic" type="Panel" parent="TabContainer"]
+layout_mode = 2
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 31.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="TabContainer/Basic"]
+custom_minimum_size = Vector2i(1028, 205)
+layout_mode = 0
+offset_right = 1038.0
+offset_bottom = 205.0
+
+[node name="ScrollContainer" type="ScrollContainer" parent="TabContainer/Basic/HBoxContainer"]
+custom_minimum_size = Vector2i(950, 190)
+layout_mode = 2
+offset_right = 950.0
+offset_bottom = 205.0
+
+[node name="GridContainer" type="GridContainer" parent="TabContainer/Basic/HBoxContainer/ScrollContainer"]
+custom_minimum_size = Vector2i(650, 0)
+layout_mode = 2
+offset_right = 932.0
+offset_bottom = 334.0
+columns = 9
+
+[node name="VBoxContainer10" type="VBoxContainer" parent="TabContainer/Basic/HBoxContainer/ScrollContainer/GridContainer"]
+custom_minimum_size = Vector2i(100, 0)
+layout_mode = 2
+offset_right = 100.0
+offset_bottom = 165.0
+
+[node name="Label" type="Label" parent="TabContainer/Basic/HBoxContainer/ScrollContainer/GridContainer/VBoxContainer10"]
+layout_mode = 2
+offset_right = 100.0
+offset_bottom = 26.0
+text = "Mesh"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="TabContainer/Basic/HBoxContainer/ScrollContainer/GridContainer/VBoxContainer10"]
+layout_mode = 2
+offset_top = 30.0
+offset_right = 100.0
+offset_bottom = 130.0
+texture = ExtResource("2_g0cd1")
+
+[node name="AddMesh" type="Button" parent="TabContainer/Basic/HBoxContainer/ScrollContainer/GridContainer/VBoxContainer10"]
+self_modulate = Color(0.0235294, 1, 0, 1)
+layout_mode = 2
+offset_left = 30.0
+offset_top = 134.0
+offset_right = 69.0
+offset_bottom = 165.0
+size_flags_horizontal = 4
+text = "Add"
+
+[node name="VBoxContainer9" type="VBoxContainer" parent="TabContainer/Basic/HBoxContainer/ScrollContainer/GridContainer"]
+custom_minimum_size = Vector2i(100, 0)
+layout_mode = 2
+offset_left = 104.0
+offset_right = 204.0
+offset_bottom = 165.0
+
+[node name="Label" type="Label" parent="TabContainer/Basic/HBoxContainer/ScrollContainer/GridContainer/VBoxContainer9"]
+layout_mode = 2
+offset_right = 100.0
+offset_bottom = 26.0
+text = "Polygon"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="TabContainer/Basic/HBoxContainer/ScrollContainer/GridContainer/VBoxContainer9"]
+layout_mode = 2
+offset_top = 30.0
+offset_right = 100.0
+offset_bottom = 130.0
+texture = ExtResource("4_xprkn")
+
+[node name="AddPolygon" type="Button" parent="TabContainer/Basic/HBoxContainer/ScrollContainer/GridContainer/VBoxContainer9"]
+self_modulate = Color(0.0235294, 1, 0, 1)
+layout_mode = 2
+offset_left = 30.0
+offset_top = 134.0
+offset_right = 69.0
+offset_bottom = 165.0
+size_flags_horizontal = 4
+text = "Add"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="TabContainer/Basic/HBoxContainer/ScrollContainer/GridContainer"]
+custom_minimum_size = Vector2i(100, 0)
+layout_mode = 2
+offset_left = 208.0
+offset_right = 308.0
+offset_bottom = 165.0
+
+[node name="Label" type="Label" parent="TabContainer/Basic/HBoxContainer/ScrollContainer/GridContainer/VBoxContainer"]
+layout_mode = 2
+offset_right = 100.0
+offset_bottom = 26.0
+text = "Cone"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="TabContainer/Basic/HBoxContainer/ScrollContainer/GridContainer/VBoxContainer"]
+layout_mode = 2
+offset_top = 30.0
+offset_right = 100.0
+offset_bottom = 130.0
+texture = ExtResource("4_ufa4f")
+
+[node name="AddCone" type="Button" parent="TabContainer/Basic/HBoxContainer/ScrollContainer/GridContainer/VBoxContainer"]
+self_modulate = Color(0.0235294, 1, 0, 1)
+layout_mode = 2
+offset_left = 30.0
+offset_top = 134.0
+offset_right = 69.0
+offset_bottom = 165.0
+size_flags_horizontal = 4
+text = "Add"
+
+[node name="VBoxContainer3" type="VBoxContainer" parent="TabContainer/Basic/HBoxContainer/ScrollContainer/GridContainer"]
+custom_minimum_size = Vector2i(100, 0)
+layout_mode = 2
+offset_left = 312.0
+offset_right = 412.0
+offset_bottom = 165.0
+
+[node name="Label" type="Label" parent="TabContainer/Basic/HBoxContainer/ScrollContainer/GridContainer/VBoxContainer3"]
+layout_mode = 2
+offset_right = 100.0
+offset_bottom = 26.0
+text = "Box"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="TabContainer/Basic/HBoxContainer/ScrollContainer/GridContainer/VBoxContainer3"]
+layout_mode = 2
+offset_top = 30.0
+offset_right = 100.0
+offset_bottom = 130.0
+texture = ExtResource("5_sr8gj")
+
+[node name="AddBox" type="Button" parent="TabContainer/Basic/HBoxContainer/ScrollContainer/GridContainer/VBoxContainer3"]
+self_modulate = Color(0.0235294, 1, 0, 1)
+layout_mode = 2
+offset_left = 30.0
+offset_top = 134.0
+offset_right = 69.0
+offset_bottom = 165.0
+size_flags_horizontal = 4
+text = "Add"
+
+[node name="VBoxContainer4" type="VBoxContainer" parent="TabContainer/Basic/HBoxContainer/ScrollContainer/GridContainer"]
+custom_minimum_size = Vector2i(100, 0)
+layout_mode = 2
+offset_left = 416.0
+offset_right = 516.0
+offset_bottom = 165.0
+
+[node name="Label" type="Label" parent="TabContainer/Basic/HBoxContainer/ScrollContainer/GridContainer/VBoxContainer4"]
+layout_mode = 2
+offset_right = 100.0
+offset_bottom = 26.0
+text = "Cylinder"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="TabContainer/Basic/HBoxContainer/ScrollContainer/GridContainer/VBoxContainer4"]
+layout_mode = 2
+offset_top = 30.0
+offset_right = 100.0
+offset_bottom = 130.0
+texture = ExtResource("6_fysmq")
+
+[node name="AddCylinder" type="Button" parent="TabContainer/Basic/HBoxContainer/ScrollContainer/GridContainer/VBoxContainer4"]
+self_modulate = Color(0.0235294, 1, 0, 1)
+layout_mode = 2
+offset_left = 30.0
+offset_top = 134.0
+offset_right = 69.0
+offset_bottom = 165.0
+size_flags_horizontal = 4
+text = "Add"
+
+[node name="VBoxContainer5" type="VBoxContainer" parent="TabContainer/Basic/HBoxContainer/ScrollContainer/GridContainer"]
+custom_minimum_size = Vector2i(100, 0)
+layout_mode = 2
+offset_left = 520.0
+offset_right = 620.0
+offset_bottom = 165.0
+
+[node name="Label" type="Label" parent="TabContainer/Basic/HBoxContainer/ScrollContainer/GridContainer/VBoxContainer5"]
+layout_mode = 2
+offset_right = 100.0
+offset_bottom = 26.0
+text = "Sphere"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="TabContainer/Basic/HBoxContainer/ScrollContainer/GridContainer/VBoxContainer5"]
+layout_mode = 2
+offset_top = 30.0
+offset_right = 100.0
+offset_bottom = 130.0
+texture = ExtResource("7_ekhoq")
+
+[node name="AddSphere" type="Button" parent="TabContainer/Basic/HBoxContainer/ScrollContainer/GridContainer/VBoxContainer5"]
+self_modulate = Color(0.0235294, 1, 0, 1)
+layout_mode = 2
+offset_left = 30.0
+offset_top = 134.0
+offset_right = 69.0
+offset_bottom = 165.0
+size_flags_horizontal = 4
+text = "Add"
+
+[node name="VBoxContainer6" type="VBoxContainer" parent="TabContainer/Basic/HBoxContainer/ScrollContainer/GridContainer"]
+custom_minimum_size = Vector2i(100, 0)
+layout_mode = 2
+offset_left = 624.0
+offset_right = 724.0
+offset_bottom = 165.0
+
+[node name="Label" type="Label" parent="TabContainer/Basic/HBoxContainer/ScrollContainer/GridContainer/VBoxContainer6"]
+layout_mode = 2
+offset_right = 100.0
+offset_bottom = 26.0
+text = "Half Sphere"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="TabContainer/Basic/HBoxContainer/ScrollContainer/GridContainer/VBoxContainer6"]
+layout_mode = 2
+offset_top = 30.0
+offset_right = 100.0
+offset_bottom = 130.0
+texture = ExtResource("8_cj67l")
+
+[node name="AddHalfSphere" type="Button" parent="TabContainer/Basic/HBoxContainer/ScrollContainer/GridContainer/VBoxContainer6"]
+self_modulate = Color(0.0235294, 1, 0, 1)
+layout_mode = 2
+offset_left = 30.0
+offset_top = 134.0
+offset_right = 69.0
+offset_bottom = 165.0
+size_flags_horizontal = 4
+text = "Add"
+
+[node name="VBoxContainer7" type="VBoxContainer" parent="TabContainer/Basic/HBoxContainer/ScrollContainer/GridContainer"]
+custom_minimum_size = Vector2i(100, 0)
+layout_mode = 2
+offset_left = 728.0
+offset_right = 828.0
+offset_bottom = 165.0
+
+[node name="Label" type="Label" parent="TabContainer/Basic/HBoxContainer/ScrollContainer/GridContainer/VBoxContainer7"]
+layout_mode = 2
+offset_right = 100.0
+offset_bottom = 26.0
+text = "Torus"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="TabContainer/Basic/HBoxContainer/ScrollContainer/GridContainer/VBoxContainer7"]
+layout_mode = 2
+offset_top = 30.0
+offset_right = 100.0
+offset_bottom = 130.0
+texture = ExtResource("9_v0ran")
+
+[node name="AddTorus" type="Button" parent="TabContainer/Basic/HBoxContainer/ScrollContainer/GridContainer/VBoxContainer7"]
+self_modulate = Color(0.0235294, 1, 0, 1)
+layout_mode = 2
+offset_left = 30.0
+offset_top = 134.0
+offset_right = 69.0
+offset_bottom = 165.0
+size_flags_horizontal = 4
+text = "Add"
+
+[node name="VBoxContainer11" type="VBoxContainer" parent="TabContainer/Basic/HBoxContainer/ScrollContainer/GridContainer"]
+custom_minimum_size = Vector2i(100, 0)
+layout_mode = 2
+offset_left = 832.0
+offset_right = 932.0
+offset_bottom = 165.0
+
+[node name="Label" type="Label" parent="TabContainer/Basic/HBoxContainer/ScrollContainer/GridContainer/VBoxContainer11"]
+layout_mode = 2
+offset_right = 100.0
+offset_bottom = 26.0
+text = "Icosphere"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="TabContainer/Basic/HBoxContainer/ScrollContainer/GridContainer/VBoxContainer11"]
+layout_mode = 2
+offset_top = 30.0
+offset_right = 100.0
+offset_bottom = 130.0
+texture = ExtResource("10_3peuj")
+
+[node name="AddIcosphere" type="Button" parent="TabContainer/Basic/HBoxContainer/ScrollContainer/GridContainer/VBoxContainer11"]
+self_modulate = Color(0.0235294, 1, 0, 1)
+layout_mode = 2
+offset_left = 30.0
+offset_top = 134.0
+offset_right = 69.0
+offset_bottom = 165.0
+size_flags_horizontal = 4
+text = "Add"
+
+[node name="VBoxContainer8" type="VBoxContainer" parent="TabContainer/Basic/HBoxContainer/ScrollContainer/GridContainer"]
+custom_minimum_size = Vector2i(100, 0)
+layout_mode = 2
+offset_top = 169.0
+offset_right = 100.0
+offset_bottom = 334.0
+
+[node name="Label" type="Label" parent="TabContainer/Basic/HBoxContainer/ScrollContainer/GridContainer/VBoxContainer8"]
+layout_mode = 2
+offset_right = 100.0
+offset_bottom = 26.0
+text = "Ring"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="TabContainer/Basic/HBoxContainer/ScrollContainer/GridContainer/VBoxContainer8"]
+layout_mode = 2
+offset_top = 30.0
+offset_right = 100.0
+offset_bottom = 130.0
+texture = ExtResource("11_2i7k1")
+
+[node name="AddRing" type="Button" parent="TabContainer/Basic/HBoxContainer/ScrollContainer/GridContainer/VBoxContainer8"]
+self_modulate = Color(0.0235294, 1, 0, 1)
+layout_mode = 2
+offset_left = 30.0
+offset_top = 134.0
+offset_right = 69.0
+offset_bottom = 165.0
+size_flags_horizontal = 4
+text = "Add"
+
+[node name="VBoxContainer12" type="VBoxContainer" parent="TabContainer/Basic/HBoxContainer/ScrollContainer/GridContainer"]
+custom_minimum_size = Vector2i(100, 0)
+layout_mode = 2
+offset_left = 104.0
+offset_top = 169.0
+offset_right = 204.0
+offset_bottom = 334.0
+
+[node name="Label" type="Label" parent="TabContainer/Basic/HBoxContainer/ScrollContainer/GridContainer/VBoxContainer12"]
+layout_mode = 2
+offset_right = 100.0
+offset_bottom = 26.0
+text = "Buckyball"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="TabContainer/Basic/HBoxContainer/ScrollContainer/GridContainer/VBoxContainer12"]
+layout_mode = 2
+offset_top = 30.0
+offset_right = 100.0
+offset_bottom = 130.0
+texture = ExtResource("12_x1dxt")
+
+[node name="AddBuckyball" type="Button" parent="TabContainer/Basic/HBoxContainer/ScrollContainer/GridContainer/VBoxContainer12"]
+self_modulate = Color(0.0235294, 1, 0, 1)
+layout_mode = 2
+offset_left = 30.0
+offset_top = 134.0
+offset_right = 69.0
+offset_bottom = 165.0
+size_flags_horizontal = 4
+text = "Add"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="TabContainer/Basic/HBoxContainer"]
+layout_mode = 2
+offset_left = 954.0
+offset_right = 1158.0
+offset_bottom = 205.0
+
+[node name="Publish" type="Button" parent="TabContainer/Basic/HBoxContainer/HBoxContainer"]
+modulate = Color(0, 1, 0, 1)
+custom_minimum_size = Vector2i(100, 10)
+layout_mode = 2
+offset_right = 100.0
+offset_bottom = 205.0
+text = "PUBLISH"
+
+[node name="Finalize" type="Button" parent="TabContainer/Basic/HBoxContainer/HBoxContainer"]
+modulate = Color(0, 1, 0, 1)
+custom_minimum_size = Vector2i(100, 10)
+layout_mode = 2
+offset_left = 104.0
+offset_right = 204.0
+offset_bottom = 205.0
+text = "FINALIZE"
+
+[node name="Community" type="Panel" parent="TabContainer"]
+visible = false
+layout_mode = 2
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 31.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="TabContainer/Community"]
+custom_minimum_size = Vector2i(1028, 205)
+layout_mode = 0
+offset_right = 1038.0
+offset_bottom = 205.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="TabContainer/Community/HBoxContainer"]
+layout_mode = 2
+offset_right = 950.0
+offset_bottom = 225.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="TabContainer/Community/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+offset_right = 950.0
+offset_bottom = 31.0
+
+[node name="TextureRect" type="TextureRect" parent="TabContainer/Community/HBoxContainer/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2i(32, 16)
+layout_mode = 2
+offset_right = 32.0
+offset_bottom = 31.0
+texture = ExtResource("10_gasgh")
+ignore_texture_size = true
+
+[node name="LineEdit" type="LineEdit" parent="TabContainer/Community/HBoxContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+offset_left = 36.0
+offset_right = 950.0
+offset_bottom = 31.0
+size_flags_horizontal = 3
+placeholder_text = "Search here..."
+
+[node name="ScrollContainer" type="ScrollContainer" parent="TabContainer/Community/HBoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2i(950, 190)
+layout_mode = 2
+offset_top = 35.0
+offset_right = 950.0
+offset_bottom = 225.0
+
+[node name="GridContainer" type="GridContainer" parent="TabContainer/Community/HBoxContainer/VBoxContainer/ScrollContainer"]
+custom_minimum_size = Vector2i(650, 0)
+layout_mode = 2
+offset_right = 650.0
+columns = 9
+
+[node name="ShapeCreationButton" parent="TabContainer/Community/HBoxContainer/VBoxContainer/ScrollContainer/GridContainer" instance=ExtResource("10_gusm6")]
+custom_minimum_size = Vector2i(100, 0)
+layout_mode = 2
+offset_bottom = 0.0
+size_flags_horizontal = 0
+size_flags_vertical = 0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="TabContainer/Community/HBoxContainer"]
+layout_mode = 2
+offset_left = 954.0
+offset_right = 1158.0
+offset_bottom = 225.0
+
+[node name="Publish" type="Button" parent="TabContainer/Community/HBoxContainer/HBoxContainer"]
+modulate = Color(0, 1, 0, 1)
+custom_minimum_size = Vector2i(100, 10)
+layout_mode = 2
+offset_right = 100.0
+offset_bottom = 225.0
+text = "PUBLISH"
+
+[node name="Finalize" type="Button" parent="TabContainer/Community/HBoxContainer/HBoxContainer"]
+modulate = Color(0, 1, 0, 1)
+custom_minimum_size = Vector2i(100, 10)
+layout_mode = 2
+offset_left = 104.0
+offset_right = 204.0
+offset_bottom = 225.0
+text = "FINALIZE"
+
+[node name="ConfirmationDialog" type="ConfirmationDialog" parent="."]
+size = Vector2i(763, 100)
+dialog_text = "Do you really want to publish your MeshBuilder shape, and make it available for anyone to use ?"
+
+[node name="NameForPublishDialog" type="ConfirmationDialog" parent="."]
+size = Vector2i(763, 100)
+dialog_text = "How do you want to name your published model ?"
+
+[node name="LineEdit" type="LineEdit" parent="NameForPublishDialog"]
+offset_right = 67.0625
+offset_bottom = 31.0
+placeholder_text = "Name of my model"
+
+[connection signal="visibility_changed" from="TabContainer/Basic" to="." method="_on_community_visibility_changed"]
+[connection signal="pressed" from="TabContainer/Basic/HBoxContainer/ScrollContainer/GridContainer/VBoxContainer10/AddMesh" to="." method="_on_add_mesh_pressed"]
+[connection signal="pressed" from="TabContainer/Basic/HBoxContainer/ScrollContainer/GridContainer/VBoxContainer9/AddPolygon" to="." method="_on_add_polygon_pressed"]
+[connection signal="pressed" from="TabContainer/Basic/HBoxContainer/ScrollContainer/GridContainer/VBoxContainer/AddCone" to="." method="_on_add_cone_pressed"]
+[connection signal="pressed" from="TabContainer/Basic/HBoxContainer/ScrollContainer/GridContainer/VBoxContainer3/AddBox" to="." method="_on_add_box_pressed"]
+[connection signal="pressed" from="TabContainer/Basic/HBoxContainer/ScrollContainer/GridContainer/VBoxContainer4/AddCylinder" to="." method="_on_add_cylinder_pressed"]
+[connection signal="pressed" from="TabContainer/Basic/HBoxContainer/ScrollContainer/GridContainer/VBoxContainer5/AddSphere" to="." method="_on_add_sphere_pressed"]
+[connection signal="pressed" from="TabContainer/Basic/HBoxContainer/ScrollContainer/GridContainer/VBoxContainer6/AddHalfSphere" to="." method="_on_add_half_sphere_pressed"]
+[connection signal="pressed" from="TabContainer/Basic/HBoxContainer/ScrollContainer/GridContainer/VBoxContainer7/AddTorus" to="." method="_on_add_torus_pressed"]
+[connection signal="pressed" from="TabContainer/Basic/HBoxContainer/ScrollContainer/GridContainer/VBoxContainer11/AddIcosphere" to="." method="_on_add_icosphere_pressed"]
+[connection signal="pressed" from="TabContainer/Basic/HBoxContainer/ScrollContainer/GridContainer/VBoxContainer8/AddRing" to="." method="_on_add_ring_pressed"]
+[connection signal="pressed" from="TabContainer/Basic/HBoxContainer/ScrollContainer/GridContainer/VBoxContainer12/AddBuckyball" to="." method="_on_add_buckyball_pressed"]
+[connection signal="pressed" from="TabContainer/Basic/HBoxContainer/HBoxContainer/Publish" to="." method="_on_publish_pressed"]
+[connection signal="pressed" from="TabContainer/Basic/HBoxContainer/HBoxContainer/Finalize" to="." method="_on_finalize_pressed"]
+[connection signal="visibility_changed" from="TabContainer/Community" to="." method="_on_community_visibility_changed"]
+[connection signal="text_changed" from="TabContainer/Community/HBoxContainer/VBoxContainer/HBoxContainer/LineEdit" to="." method="_on_line_edit_text_changed"]
+[connection signal="pressed" from="TabContainer/Community/HBoxContainer/HBoxContainer/Publish" to="." method="_on_publish_pressed"]
+[connection signal="pressed" from="TabContainer/Community/HBoxContainer/HBoxContainer/Finalize" to="." method="_on_finalize_pressed"]
+[connection signal="confirmed" from="ConfirmationDialog" to="." method="_on_confirmation_dialog_confirmed"]
+[connection signal="confirmed" from="NameForPublishDialog" to="." method="_on_name_for_publish_dialog_confirmed"]

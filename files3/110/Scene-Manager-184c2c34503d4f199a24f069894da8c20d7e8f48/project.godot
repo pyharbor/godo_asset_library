@@ -1,0 +1,38 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=5
+
+_global_script_classes=[{
+"base": "Object",
+"class": &"SceneManagerConstants",
+"language": &"GDScript",
+"path": "res://addons/scene_manager/SceneManagerConstants.gd"
+}]
+_global_script_class_icons={
+"SceneManagerConstants": ""
+}
+
+[application]
+
+config/name="Scene Manager"
+run/main_scene="res://demo/test.tscn"
+config/icon="res://logo.png"
+config/features=PackedStringArray("4.0")
+
+[autoload]
+
+SceneManager="*res://addons/scene_manager/SceneManager.tscn"
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/scene_manager/plugin.cfg")
+
+[physics]
+
+common/enable_pause_aware_picking=true

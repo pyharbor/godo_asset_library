@@ -1,0 +1,98 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=5
+
+_global_script_classes=[{
+"base": "Control",
+"class": &"DatalogueClassifForm",
+"language": &"GDScript",
+"path": "res://addons/datalogue/ui/forms/classif_form.gd"
+}, {
+"base": "Control",
+"class": &"DatalogueCreateForm",
+"language": &"GDScript",
+"path": "res://addons/datalogue/ui/forms/create_form.gd"
+}, {
+"base": "Control",
+"class": &"DatalogueRemoveForm",
+"language": &"GDScript",
+"path": "res://addons/datalogue/ui/forms/remove_form.gd"
+}, {
+"base": "Control",
+"class": &"DatalogueTextForm",
+"language": &"GDScript",
+"path": "res://addons/datalogue/ui/forms/text_form.gd"
+}, {
+"base": "Control",
+"class": &"DatalogueValueForm",
+"language": &"GDScript",
+"path": "res://addons/datalogue/ui/forms/value_form.gd"
+}, {
+"base": "RefCounted",
+"class": &"DlDatabase",
+"language": &"GDScript",
+"path": "res://addons/datalogue/core/database.gd"
+}, {
+"base": "RefCounted",
+"class": &"DlEnums",
+"language": &"GDScript",
+"path": "res://addons/datalogue/core/enums.gd"
+}, {
+"base": "RefCounted",
+"class": &"DlItem",
+"language": &"GDScript",
+"path": "res://addons/datalogue/core/item.gd"
+}, {
+"base": "RefCounted",
+"class": &"DlQuery",
+"language": &"GDScript",
+"path": "res://addons/datalogue/core/query.gd"
+}, {
+"base": "Control",
+"class": &"DlUi",
+"language": &"GDScript",
+"path": "res://addons/datalogue/ui/main.gd"
+}, {
+"base": "RefCounted",
+"class": &"DlUtils",
+"language": &"GDScript",
+"path": "res://addons/datalogue/core/utils.gd"
+}]
+_global_script_class_icons={
+"DatalogueClassifForm": "",
+"DatalogueCreateForm": "",
+"DatalogueRemoveForm": "",
+"DatalogueTextForm": "",
+"DatalogueValueForm": "",
+"DlDatabase": "",
+"DlEnums": "",
+"DlItem": "",
+"DlQuery": "",
+"DlUi": "",
+"DlUtils": ""
+}
+
+[application]
+
+config/name="Datalogue"
+run/main_scene="res://test.tscn"
+config/icon="res://icon.png"
+config/features=PackedStringArray("4.0")
+
+[autoload]
+
+Datalogue="*res://addons/datalogue/core/datalogue.gd"
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/datalogue/plugin.cfg")
+
+[rendering]
+
+environment/defaults/default_environment="res://default_env.tres"

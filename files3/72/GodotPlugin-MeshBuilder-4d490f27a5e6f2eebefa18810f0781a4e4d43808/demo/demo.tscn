@@ -1,0 +1,28 @@
+[gd_scene load_steps=6 format=3 uid="uid://byapsytbqrrb7"]
+
+[ext_resource type="Script" path="res://demo/demo.gd" id="1_sugoq"]
+[ext_resource type="Script" path="res://addons/meshbuilder/mesh_builder/mesh_builder.gd" id="2_kt2xo"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_gv1g4"]
+
+[sub_resource type="Sky" id="Sky_3a068"]
+sky_material = SubResource("ProceduralSkyMaterial_gv1g4")
+
+[sub_resource type="Environment" id="Environment_j230i"]
+background_mode = 2
+sky = SubResource("Sky_3a068")
+ambient_light_source = 3
+ssao_enabled = true
+
+[node name="Demo" type="Node3D"]
+script = ExtResource("1_sugoq")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_j230i")
+
+[node name="DirectionalLight3d" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.86537, -0.494762, -0.0796554, -0.32328, -0.672605, 0.665652, -0.382916, -0.550284, -0.741999, 13.5405, 13.1879, 7.86839)
+
+[node name="MeshBuilder" type="CSGCombiner3D" parent="."]
+layers = 524288
+script = ExtResource("2_kt2xo")
